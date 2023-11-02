@@ -1,49 +1,26 @@
-# Reto 1: ¡Arregla Twitter!
+# Challenge 01
 
-## Problema
+Un espía está enviando mensajes encriptados.
 
-Twitter ha sido comprado y quieren eliminar los bots. Te han pedido ayuda para detectar el número de usuarios en su base de datos que tienen datos corruptos.
+Tu misión es crear un programa que nos ayude a buscar patrones...
 
-La base de datos es muy antigua y está en un formato extraño. Los perfiles requieren tener los siguientes datos:
+Los mensajes son palabras separadas por espacios como este:
+gato perro perro coche Gato peRRo sol
 
-    usr: nombre de usuario
-    eme: email
-    psw: contraseña
-    age: edad
-    loc: ubicación
-    fll: número de seguidores
+Necesitamos que el programa nos devuelva el número de veces que aparece cada palabra en el mensaje, independientemente de si está en mayúsculas o minúsculas.
 
-Todo está en un fichero donde los datos de usuario son una secuencia de pares `key:value`, que pueden estar en la misma línea o separado por líneas, y cada usuario está separado por un salto de línea. ¡Ojo porque puede estar todo desordenado!
+El resultado será una cadena de texto con la palabra y el número de veces que aparece en el mensaje, con este formato:
+gato2perro3coche1sol1
 
-## Ejemplo de input:
+¡Las palabras son ordenadas por su primera aparición en el mensaje!
 
-```
-usr:@midudev eme:mi@gmail.com psw:123456 age:22 loc:bcn fll:82
+## Más ejemplos
+llaveS casa CASA casa llaves -> llaves2casa3
+taza ta za taza -> taza2ta1za1
+casas casa casasas -> casas1casa1casas1
 
-fll:111 eme:yrfa@gmail.com usr:@codember psw:123456 age:21 loc:World
+## Cómo resolverlo
+1. Resuelve el mensaje que encontrarás en este archivo: https://codember.dev/data/message_01.txt
 
-psw:11133 loc:Canary fll:333 usr:@pheralb eme:pheralb@gmail.com
-
-usr:@itziar age:19 loc:isle psw:aaa fll:222 eme:itzi@gmail.com
-```
-
-El primer usuario SÍ es válido. Tiene todos los campos.
-El segundo usuario SÍ es válido. Tiene todos los campos.
-El tercer usuario NO es válido. Le falta el campo `age`.
-El cuarto usuario SÍ es válido. Tiene todos los campos.
-
-Ahora que ya sabes esto, usa este input para detectar los usuarios incorrectos: https://codember.dev/users.txt
-
-## Pistas
-
-    Los datos pueden estar en cualquier orden.
-    Los datos pueden estar en la misma línea o separados por líneas.
-    Los usuarios se separan por un salto de línea en blanco.
-    Los usuarios pueden estar repetidos, pero no importa, siguen siendo válidos.
-    Pueden venir datos que no son necesarios para el usuario pero eso no lo hacen inválidos.
-
-## Cómo enviar la solución
-
-Usa el comando "submit" para enviar tu solución con el número de usuarios correctos + el nombre del último usuario válido. Por ejemplo:
-
-`$ submit 482@midudev`
+2. Envía tu solución con el comando "submit" en la terminal, por ejemplo así:
+submit perro3gato3coche1sol1
