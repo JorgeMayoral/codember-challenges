@@ -6,18 +6,15 @@ fn check_password(password: i32) -> bool {
     let mut prev_number = 0;
     for num in string_pass.split("") {
         let number = String::from(num).parse::<i32>();
-        match number {
-            Ok(n) => {
-                if n < prev_number {
-                    is_increasing = false;
-                    break;
-                }
-                prev_number = n;
+        if let Ok(n) = number {
+            if n < prev_number {
+                is_increasing = false;
+                break;
             }
-            Err(_) => (),
+            prev_number = n;
         }
     }
-    return is_five_repeated && is_increasing;
+    is_five_repeated && is_increasing
 }
 
 fn main() {

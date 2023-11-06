@@ -28,18 +28,19 @@ fn solve(file: &str) -> String {
             valid_users += 1;
             for field in user_fields {
                 if field.starts_with("usr") {
-                    let username = field.split(":").collect::<Vec<&str>>()[1];
+                    let username = field.split(':').collect::<Vec<&str>>()[1];
                     last_user = String::from(username);
                 }
             }
         }
     }
 
-    return format!("{valid_users}{last_user}");
+    format!("{valid_users}{last_user}")
 }
 
 fn main() {
-    let result = solve("users.txt");
+    let file_path = "./2022_challenges/challenge01-22/users.txt";
+    let result = solve(file_path);
     println!("{result}");
 }
 

@@ -17,10 +17,7 @@ fn solve(input: Vec<&str>) -> String {
             current_index += 1;
         }
     }
-    return String::from(format!(
-        "{}-{}",
-        remaining_players[0], remaining_players_index[0]
-    ));
+    format!("{}-{}", remaining_players[0], remaining_players_index[0])
 }
 
 fn main() {

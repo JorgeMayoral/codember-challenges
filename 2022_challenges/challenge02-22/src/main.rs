@@ -2,14 +2,14 @@ const MIN_CHAR: u32 = 97;
 const MAX_CHAR: u32 = 122;
 
 fn compare_num(num: u32) -> bool {
-    return num >= MIN_CHAR && num <= MAX_CHAR;
+    (MIN_CHAR..=MAX_CHAR).contains(&num)
 }
 
 fn split_chars(char_str: &str) -> Vec<u32> {
     let mut chars_vec: Vec<u32> = vec![];
     let mut new_char: u32 = 0;
     for c in char_str.split("").collect::<Vec<&str>>() {
-        if c == "" {
+        if c.is_empty() {
             continue;
         }
         match c.parse::<u32>() {
@@ -26,11 +26,11 @@ fn split_chars(char_str: &str) -> Vec<u32> {
         }
     }
 
-    return chars_vec;
+    chars_vec
 }
 
 fn solve(input: &str) -> String {
-    let words: Vec<&str> = input.split(" ").collect();
+    let words: Vec<&str> = input.split(' ').collect();
     let mut decrypted_sentence: Vec<String> = vec![];
     for word in words {
         let chars_vec = split_chars(word);
@@ -45,7 +45,7 @@ fn solve(input: &str) -> String {
         decrypted_sentence.insert(decrypted_sentence.len(), decrypted_word);
     }
 
-    return decrypted_sentence.join(" ");
+    decrypted_sentence.join(" ")
 }
 
 fn main() {

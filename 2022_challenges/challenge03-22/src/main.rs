@@ -13,41 +13,39 @@ fn solve(input: Vec<&str>) -> Solution {
     };
 
     input.iter().for_each(|color| {
-        if previous_color == "" && current_color == "" {
+        if previous_color.is_empty() && current_color.is_empty() {
             current_color = color;
             length += 1;
-        } else if current_color != "" && previous_color == "" {
+        } else if !current_color.is_empty() && previous_color.is_empty() {
             if color != &current_color {
                 previous_color = current_color;
                 current_color = color;
                 length += 1;
             }
-        } else {
-            if color != &previous_color && color == &current_color {
-                if length >= longest.length {
-                    longest = Solution {
-                        length,
-                        color: String::from(current_color),
-                    };
-                }
-                current_color = color;
-                previous_color = "";
-                length = 1;
-            } else if color != &previous_color && color != &current_color {
-                if length >= longest.length {
-                    longest = Solution {
-                        length,
-                        color: String::from(current_color),
-                    }
+        } else if color != &previous_color && color == &current_color {
+            if length >= longest.length {
+                longest = Solution {
+                    length,
+                    color: String::from(current_color),
                 };
-                previous_color = current_color;
-                current_color = color;
-                length = 2;
-            } else {
-                previous_color = current_color;
-                current_color = color;
-                length += 1;
             }
+            current_color = color;
+            previous_color = "";
+            length = 1;
+        } else if color != &previous_color && color != &current_color {
+            if length >= longest.length {
+                longest = Solution {
+                    length,
+                    color: String::from(current_color),
+                }
+            };
+            previous_color = current_color;
+            current_color = color;
+            length = 2;
+        } else {
+            previous_color = current_color;
+            current_color = color;
+            length += 1;
         }
     });
 
@@ -58,7 +56,7 @@ fn solve(input: Vec<&str>) -> Solution {
         };
     }
 
-    return longest;
+    longest
 }
 
 fn main() {
