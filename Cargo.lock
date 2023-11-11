@@ -15,6 +15,10 @@ name = "challenge02-22"
 version = "0.1.0"
 
 [[package]]
+name = "challenge02-23"
+version = "0.1.0"
+
+[[package]]
 name = "challenge03-22"
 version = "0.1.0"
 
