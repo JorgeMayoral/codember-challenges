@@ -8,6 +8,7 @@ Solved challenges from [Codember](https://codember.dev/).
 
 - [x] [Challenge 01](https://github.com/JorgeMayoral/codember-challenges/tree/main/2023_challenges/challenge01-23)
 - [x] [Challenge 02](https://github.com/JorgeMayoral/codember-challenges/tree/main/2023_challenges/challenge02-23)
+- [x] [Challenge 03](https://github.com/JorgeMayoral/codember-challenges/tree/main/2023_challenges/challenge03-23)
 
 ### 2022
 
@@ -18,6 +19,9 @@ Solved challenges from [Codember](https://codember.dev/).
 - [x] [Challenge 05](https://github.com/JorgeMayoral/codember-challenges/tree/main/2022_challenges/challenge05-22)
 
 ## Run solution
+
+> [!WARNING]
+> Input files are harcoded relative to the project root directory in the source code, so you need to run the challenge from the project root directory.
 
 ```bash
 cargo run --bin <challenge>
