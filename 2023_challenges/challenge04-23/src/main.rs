@@ -1,7 +1,5 @@
 fn solve(input: &str) -> bool {
-    let (filename, checksum) = input
-        .split_once('-')
-        .expect("Invalid input format: \"{input}\"");
+    let (filename, checksum) = input.split_once('-').expect("Invalid input format");
     let mut letter_counts: Vec<(char, usize)> = vec![];
     for letter in filename.chars() {
         match letter_counts.iter().position(|l| l.0 == letter) {
@@ -44,7 +42,6 @@ mod tests {
         let input = "xyzz33-xy";
         let expected = true;
         let result = solve(input);
-        dbg!(&result);
         assert_eq!(result, expected);
     }
 
@@ -53,7 +50,6 @@ mod tests {
         let input = "abcca1-ab1";
         let expected = false;
         let result = solve(input);
-        dbg!(&result);
         assert_eq!(result, expected);
     }
 
@@ -62,7 +58,6 @@ mod tests {
         let input = "abbc11-ca";
         let expected = false;
         let result = solve(input);
-        dbg!(&result);
         assert_eq!(result, expected);
     }
 }
