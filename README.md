@@ -10,6 +10,7 @@ Solved challenges from [Codember](https://codember.dev/).
 - [x] [Challenge 02](https://github.com/JorgeMayoral/codember-challenges/tree/main/2023_challenges/challenge02-23)
 - [x] [Challenge 03](https://github.com/JorgeMayoral/codember-challenges/tree/main/2023_challenges/challenge03-23)
 - [x] [Challenge 04](https://github.com/JorgeMayoral/codember-challenges/tree/main/2023_challenges/challenge04-23)
+- [x] [Challenge 05](https://github.com/JorgeMayoral/codember-challenges/tree/main/2023_challenges/challenge05-23)
 
 ### 2022
 
